@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Eigene Methoden V.2</title>
+  </head>
+  <body>
+    <div id="div01">Division01
+            <button>AddBorder1</button>
+    </div>
+    <div id="div02">Division02
+            <button>AddBorder2</button>
+    </div>
+    <div id="div03">Division03
+            <button>AddBorder3</button>
+    </div>
+    <div id="div04">Division04
+            <button onclick="makeBorder();">AddBorder4</button>
+                <!-- <button onclick="makeBorder();">AddBorder4</button> -->
+    <!-- wirft Fehler auf, führt trotzdem aus -->
+    </div>
+
+    
+    <script>
+      $(function() {
+        $.fn.makeBorder = function() {
+          this.css("border", "2px solid red");
+          return this;
+        };
+        /* MIT id="btn" funktioniert es nicht! */
+        
+        $("button").click(function() {
+          $(this).parent().makeBorder();
+        });
+
+      });
+    </script>
+  </body>
+</html>

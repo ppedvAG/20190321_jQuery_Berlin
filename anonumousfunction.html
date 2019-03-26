@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Anonyme Funktionen</title>
+  </head>
+  <body>
+    <script>
+      function process(funktionsVariable, einArray) {
+        var resultate = [];
+        for (let i = 0; i < einArray.length; i++) {
+          resultate[i] = funktionsVariable(einArray[i]);
+        }
+        return resultate;
+      }
+      let zahlen = [1, 2, 3, 4, 5];
+      f = function(x) {
+        //anonyme Funktion
+        return x * x * x;
+      };
+      /* let zahlenZuKubik = process(f , zahlen);
+        console.log(zahlenZuKubik); */
+
+      /* Lösung mit Arrowfunction und der anonymen Funktion */
+      let zahlenZuKubik = zahlen.map(zahl => f(zahl));
+      console.log(zahlenZuKubik);
+
+      /* Lösung mit nur Arrowfunction */
+      /**let zahlenZuKubik = zahlen.map(zahl => zahl*zahl*zahl);
+      console.log(zahlenZuKubik); */
+    </script>
+  </body>
+</html>

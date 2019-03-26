@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nth-of-Selector</title>
+    <style>
+      /* first-child */
+      /* nur die p werden selektiert, 
+        die in ihrem Elternteil auch das erste Kindelement sind */
+      /*         p:first-child {
+            color:firebrick;
+            font-size: 2em;
+            font-weight: lighter;
+        } */
+
+      /* last-child */
+      /* nur die p werden selektiert, 
+        die in ihrem Elternteil auch das letzte Kindelement sind */
+/*       p:last-child {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* only-child */
+            /* nur die p werden selektiert, 
+        die in ihrem Elternteil das einzige Kindelement sind */
+/*       p:only-child {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* nth-child(n) */
+/*       p:nth-child(3) {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* first-of-type */
+/*       p:first-of-type {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* last-of-type */
+/*       p:last-of-type {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* only-of-type */
+/*       p:only-of-type {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      } */
+
+      /* nth-of-type(n) */
+      p:nth-of-type(3) {
+        color: firebrick;
+        font-size: 2em;
+        font-weight: lighter;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h2>Heading H2</h2>
+      <h3>Heading H3</h3>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+      <p>Paragraph 3</p>
+      <p>Paragraph 4</p>
+    </header>
+    <section>
+      <aside>
+        <h2>Heading H2</h2>
+        <h3>Heading H3</h3>
+        <h4>Heading H4</h4>
+        <p>Paragraph 1 in aside</p>
+        <p>Paragraph 2 in aside</p>
+        <p>Paragraph 3 in aside</p>
+        <p>Paragraph 4 in aside</p>
+        <span>Span in aside</span>
+      </aside>
+    </section>
+    <footer>
+
+      <p>Der einzige P in Footer</p>
+    </footer>
+  </body>
+</html>

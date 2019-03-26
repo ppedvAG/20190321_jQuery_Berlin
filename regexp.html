@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reg Exp Object</title>
+  </head>
+  <body>
+    <h3>Output1</h3>
+    <p id="out1"></p>
+    <h3>Output2</h3>
+    <p id="out2"></p>
+    <h3>Output3</h3>
+    <p id="out3"></p>
+    <h3>Output4</h3>
+    <p id="out4"></p>
+    <h3>Output5</h3>
+    <p id="out5"></p>
+
+    <script>
+      /* Bsp 1. */
+      let reg = new RegExp("a+");
+      let reg1 = /An/i;
+
+      let text = "Hallo an alle Teilnehmer.";
+      if (reg1.test(text)) {
+          out1.innerHTML = "Gefunden!";
+      } else {
+          out1.innerHTML = "Leider nicht gefunden";
+      }
+
+
+      /* Bsp 2. */
+      let reg2 = /Kuchen/ig;
+      let text2 = 
+      "Wir haben hier Kuchen" + 
+      "Magst du auch kuchen?" +
+      "Wir alle mögen kuChen";
+      let res2 = reg2.exec(text2); //es kommt ein Array zurück
+      while (res2) {
+          out2.innerHTML += res2[0] + "<br>";
+          res2 = reg2.exec(text2);
+      }
+
+      /* Bsp 3. */
+      let reg3 = /(\w+)\s(\w+)/;
+      let text3 = "John Smith";
+      let res3 = text3.replace(reg3, "$2 $1");
+      //let res3 = text3.replace(reg3, "$2, $1");
+      out3.innerHTML = res3;
+
+      /* Bsp 4. */
+      let reg4 = /\s\*/g;
+      let text4 = "Dies *ist *nur *ein *kleiner *Text";
+      let res4 = text4.replace(reg4, '-');
+      out4.innerHTML = res4;
+
+      /* Bsp 5. */
+      let reg5 = /ppedv/;
+      let text5 = "Wir sind bei Ppedv zu Besuch. Gleich verlassen wir ppedv.";
+      let res5 = text5.search("ppedv");
+      out5.innerHTML = res5; //gibt index zurück, wo gefunden
+    </script>
+  </body>
+</html>

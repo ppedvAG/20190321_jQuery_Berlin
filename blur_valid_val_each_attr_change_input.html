@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Formularevents</title>
+  </head>
+  <body>
+    <label for="myInp1">my Input 1</label>
+    <input type="text" id="myInp1" name="myInp1" />
+    <div id="output">output</div>
+
+    <label for="myInp2">my Input 2</label>
+    <input
+      type="text"
+      id="myInp2"
+      name="myInp2"
+      pattern="[a-zA-Z \+]{3,}"
+      required
+    />
+    <br />
+    <label for="myInp3">my Input 3</label>
+    <input
+      type="range"
+      id="myInp3"
+      name="myInp3"
+      value="70"
+      min="30"
+      max="400"
+      step="10"
+    />
+    <div id="outputAktuell">
+        <span id="min"></span>
+        <span id="max"></span>
+    </div>
+
+    <script>
+      $(function() {
+        $("#myInp1").blur(function() {
+          let eingabe = $(this).val();
+          $("#output").text(eingabe);
+        });
+
+        $("#myInp2").blur(function() {
+          var inp = $(this);
+          if (inp[0].validity.valid) {
+            $(this).css("background-color", "green");
+          } else {
+            $(this).css("background-color", "red");
+          }
+
+          /* experiment */
+          console.log("input2: ");
+          console.log("input2: " + inp[0]); //[object HTMLInputElement]
+          $.each($(inp[0]), function(key, value) {
+            //Iteration von einem Array mit jQuery
+            console.log("input2 key: " + key + " value: " + value);
+          });
+          var sum;
+          for (var item in inp[0]) {
+            //Iteration von einem Objekt mit JS
+            sum += inp[0][item];
+          }
+          console.log(sum);
+          /* Nachschauen, wie kommt man auf die Property validity und weitere Eigenschaften vom Objekt */
+          /* Email an Alisa */
+        });
+
+        /* Am besten versuchen, die Elemente nur einmal zu selektieren */
+        /* Wenn wir mit der Selektion mehrere Saches ausführen wollen,
+        dann entweder alles in die on() Methode einpacken
+        (beim Abfangen von mehreren Events der Fall)
+        oder die Selektion in eine Variable speichern */
+        var rangeInput = $("#myInp3");        
+
+        var min = rangeInput.attr('min');
+        $('#min').text("von " + min);
+
+        var max = rangeInput.attr('max');
+        $('#max').text("bis " + max);
+
+
+
+        rangeInput.on({
+          change: function() { //event tritt ein beim Loslassen der linken Maustaste
+            var wert = $(this).val();
+            $("#outputAktuell").text("ausgabe von change: " + wert);
+          },
+          input: function() { //event tritt ein beim Bewegen des Schiebers
+            var wert = $(this).val();
+            $("#outputAktuell").text("ausgabe von input: " + wert);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

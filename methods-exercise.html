@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Tabelle zu Liste</title>
+  </head>
+  <body>
+    <!-- table>caption+thead>tr>th*3 -->
+    <table>
+      <caption></caption>
+      <thead>
+        <tr>
+          <th>MARKE</th>
+          <th>TYP</th>
+          <th>FARBE</th>
+        </tr>
+      </thead>
+
+      <!-- tbody>(tr>td*3)*3 -->
+      <tbody>
+        <tr>
+          <td>Skoda</td>
+          <td>Karoq</td>
+          <td>weiß</td>
+        </tr>
+        <tr>
+          <td>Kia</td>
+          <td>Sportage</td>
+          <td>rot</td>
+        </tr>
+        <tr>
+          <td>Hyundai</td>
+          <td>ix35</td>
+          <td>blau</td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="output"></div>
+    <script>
+      $(function() {
+        var tds = $("td");
+        var newHTML = "";
+        var firstTds = $("td:first-child");
+        console.log("type of firstTd: " + typeof firstTds);
+        console.log("first of firstTd: " + firstTds[0]);
+        newHTML = "<ul>";
+
+        console.log("tds länge " + tds.length);
+        /* Schleife mit Iteration mit Schritt 3 */
+        /*                 for (let i = 0; i < tds.length; i+=3) {
+                    console.log("tds["+ i + "]: " + tds[i].innerHTML);
+                    //newHTML += "<li>" + tds[i].innerHTML + "</li>"; //mit JS Objekt
+                    newHTML += "<li>" + $(tds[i]).html() + "</li>"; //mit jQ Objekt
+
+                } */
+        /* Schleife mit Iteration mit Schritt 1
+                Und dem Vergleich, ob das abgefangene Objekt das erste von seinem Typ ist */
+        for (let i = 0; i < tds.length; i++) {
+          let j = 0;
+          j = i / 3;
+          if (tds[i] == firstTds[j]) {
+            console.log("tds[" + i + "]: " + tds[i].innerHTML);            
+            newHTML += "<li>" + $(tds[i]).html() + "</li>"; //mit jQ Objekt
+          } else {
+              newHTML += "<ul><li><em>" + $(tds[i]).html() + "</em></li></ul>";
+          }
+        }
+        console.log("newHTML: " + newHTML);
+
+        $("#output").html(newHTML);
+      });
+    </script>
+  </body>
+</html>

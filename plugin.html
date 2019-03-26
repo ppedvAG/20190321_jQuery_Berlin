@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Eigene Methoden</title>
+  </head>
+  <body>
+    <div id="div01">Division01</div>
+    <!--     <div id="div02">Division02</div>
+    <div id="div03">Division03</div>
+    <div id="div04">Division04</div> -->
+    <button id="btn">Change Border</button>
+
+    <script>
+      $(function() {
+        $.fn.makeBorder = function() {
+          this.css("border", "2px solid red");
+          return this;
+        };
+        $("#btn").click(function() {
+          $("#div01").makeBorder();
+        });
+      });
+    </script>
+  </body>
+</html>

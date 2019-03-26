@@ -1,0 +1,20 @@
+**jQery erst nach dem Aufbau von DOM ausführen:
+$(document).ready(function () {})
+*oder Abkürzung dafür:
+$(function () {})
+
+**jQuery-Anweisung und Funktion-Syntax:
+$('selector').action(function (){});
+
+**emmet (früher: zencoding)
+div#demo$${Demo-Division$$}*5
+
+**Klammern-Problem
+*Schritt 1
+$();
+*Schritt 2
+$(function(){});
+*Schritt 3
+$(function(){
+    //weiterer Code
+});
