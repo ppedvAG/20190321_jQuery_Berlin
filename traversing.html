@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,3 +70,76 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Traversing</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="div01">Division01</div>
+      <div id="div02">Division02</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+        tenetur.
+      </p>
+      <div id="div03">Division03</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+        error?
+      </p>
+      <div id="div04">Division04</div>
+    </div>
+    <div class="container">
+      <div id="div05">Division05</div>
+      <div id="div06">Division06</div>
+      <div id="div07">Division07</div>
+      <div id="div08">Division08</div>
+    </div>
+    <div class="container">
+      <div id="div09">Division09</div>
+      <div id="div10">Division10</div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure,
+        laudantium.
+      </p>
+      <div id="div11">Division11</div>
+      <div id="div12">Division12</div>
+      <h1>Header h1</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+        neque?
+      </p>
+    </div>
+
+    <script>
+      $(function() {
+          /* selektiert alle siblings im container außer div03 selbst */
+/*         $("#div03")
+          .siblings()
+          .css({ fontStyle: "oblique", fontSize: "2em" }); */
+
+/* selektiert die angegebenen siblings im container außer div03 selbst */
+          $("#div03")
+          .siblings('p')
+          .css({ fontStyle: "oblique", fontSize: "2em" });
+      });
+      $('#div06').nextAll().css('color','green');
+
+      $('.container:first-child').children().css('color','green');
+
+      $('#div11').parent().css('border', 'thick solid yellow');
+
+      
+    </script>
+  </body>
+</html>
+>>>>>>> 4527856948a43dfd9546c6fbfb44d7af47053e68

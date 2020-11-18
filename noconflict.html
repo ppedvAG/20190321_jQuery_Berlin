@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,4 +26,33 @@
         });
         </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>No Conflict</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            border: thick double firebrick;
+        }
+    </style>
+</head>
+<body>    
+    <div id="demo"></div>
+    <script>
+        var jq = $.noConflict();
+        jq(document).ready(function(){
+            jq('#demo').click(function(){
+                jq(this).fadeOut(1000);
+            });
+        });
+        </script>
+</body>
+>>>>>>> 4527856948a43dfd9546c6fbfb44d7af47053e68
 </html>

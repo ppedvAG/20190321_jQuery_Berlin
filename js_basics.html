@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,4 +51,58 @@
         </script>
     
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        let zahl = 5;
+        let text = "5";
+        let zahltext = zahl + text;
+        console.log("zahltext: " + zahltext);
+        console.log("typeof zahltext: " + typeof zahltext);
+
+        /* castin von string zu number mit operator + */
+        console.log("typeof zahltext: " + typeof +zahltext);
+
+        /* Value und Type vergleichen */
+        if (zahl === text) {
+            console.log("zahl und text sind gleich");
+        } else {
+            console.log("zahl und text sind nicht gleich");
+        }
+
+        /* Nur Value vergleichen */
+        if (zahl == text) {
+            console.log("zahl und text sind gleich");
+        } else {
+            console.log("zahl und text sind nicht gleich");
+        }
+
+        zahl == 5 ? console.log(true) : console.log(false);
+        
+        const pi = 3.14;
+        
+        const cities = ["Berlin", "Bonn", "Bremen"];
+        cities[1] = "BAM";
+        console.log(cities);
+        /**
+         * bei komplexen Objekten konstant ist nur die Verbindung zum Speicherplatz.
+         * Cities darf nur ein Array aus drei Elementen sein 
+          */
+
+        //cities = ["Berlin", "Bonn", "Bremen", "Baden-Baden"]; //Fehler        
+
+        </script>
+    
+</body>
+>>>>>>> 4527856948a43dfd9546c6fbfb44d7af47053e68
 </html>

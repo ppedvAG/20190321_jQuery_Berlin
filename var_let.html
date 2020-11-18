@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -60,3 +61,67 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Variablen mit Var und Let</title>
+  </head>
+  <body>
+      <p>Schau mal in die Konsole</p>
+    <script>
+      /* deklarieren */
+      var v;
+      let l;
+
+      /* initialisieren */
+      v = 4;
+      l = 5;
+
+      /* redeklarieren */
+      var v = 4; //funktioniert
+      //let l = 5; //wirft einen Fehler auf
+      /** SyntaxError: redeclaration of let l
+       *: Previously declared at line 13, column 12 */
+      //let v = 5; //Fehler
+
+      /* beide sind in diesem Fall global */
+
+      console.log(v);
+      console.log(l);
+
+      console.log(window.v);
+      console.log(window.l);
+      /* Was genau passiert bei console.log, dass die Variablen nicht mehr ausgegeben werden?? */
+
+      var a = 5;
+      let b = 6;
+      console.log(window.a); //5
+      console.log(window.b); //undefined - b gehört nicht zum window object!
+
+
+      /** Scope von Variable mit var ist das Objekt,
+       * innerhalb von dem sie deklariert wurde. Hier: window */
+      var c = 5;
+      {
+        var c = 6;
+        console.log("var c in geschw. Kl. " + c);
+      }
+      console.log("var c außer von geschw. Kl. " + c);
+
+
+      /* Scope von Variable mit let sind die geschweiften Klammern, falls sie existieren */
+      let d = 5;
+      {
+        let d = 6;
+        console.log("let d in geschw. Kl. " + d);
+      }
+      console.log("let d außer von geschw. Kl. " + d);
+
+    </script>
+  </body>
+</html>
+>>>>>>> 4527856948a43dfd9546c6fbfb44d7af47053e68

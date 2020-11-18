@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,3 +64,70 @@
     </script>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>CSS Methoden</title>
+    <style>
+      p.bold {
+        font-weight: bold;
+      }
+      /* oder */
+      /* .bold {
+            font-weight: bold;
+        } */
+      div {
+        width: 300px;
+        height: 300px;
+        border: thin solid;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, a.</p>
+
+    <div id="demo01">Demo-Division01</div>
+    <div id="demo02">Demo-Division02</div>
+    <div id="demo03">Demo-Division03</div>
+    <div id="demo04">Demo-Division04</div>
+    <div id="demo05">Demo-Division05</div>
+    <script>
+      $(function() {
+        $("p").addClass("bold");
+        /* $('p').removeClass('bold');
+         */
+         $('#demo01').click(function () {
+             $(this).css('background-color', 'rgb(0, 255, 0)');
+         });
+         $('#demo02').mouseenter(function() {         
+            $(this).css({
+                backgroundColor: 'rgb(0, 255, 0)', //kein Bindestrich, sondern CamelCase!
+                border: '4px dotted darkorange'
+            });
+         });
+         $('#demo03').mouseleave(function(){
+            $(this).text("Möchten Sie die Box wirklich verlassen?");
+         });
+         $('#demo04').mouseleave(function(){
+            $(this).html('<a href="https://google.com">Link</a>'); //Bei Verschachtelung von Strings verschiedene Anführungszeichen verwenden!
+            //$(this).html("<a href=\"https://google.com\">Link</a>"); //oder Backslash verwenden
+         });
+         $('#demo05').on({
+             mouseenter: function(){
+                $(this).text("Herzlich willkommen!");
+             },
+             mouseleave: function(){
+                $(this).text("Möchten Sie die Box wirklich verlassen?");
+             }
+        });
+      });
+    </script>
+  </body>
+</html>
+>>>>>>> 4527856948a43dfd9546c6fbfb44d7af47053e68
