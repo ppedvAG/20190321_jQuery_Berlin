@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pfeil Funktionen</title>
+  </head>
+  <body>
+    <script>
+      let elements = ["Kupfer", "Eisen", "Magnesium", "Aluminium"];
+      let results = [];
+
+      results = elements.map(function(element) {
+        return element.length;
+      });
+      console.log("1. " + results);
+
+      /* Schlüsselwort function ist bei Pfeilfunktionen nicht nötig */
+      results = elements.map((element) => {
+        return element.length;
+      });
+      console.log("2. " + results);
+
+      /* Bei nur einem Argument sind die runden Klammern optional */
+      results = elements.map(element => {
+        return element.length;
+      });
+      console.log("3. " + results);
+
+      /** Wenn im Funktionskörper nur die return-Anweisung steht,
+       * dann die geschweiften Klammern und return sind optional
+       */
+      results = elements.map(element => element.length);
+      console.log("4. " + results);
+
+      /**
+       * Eher für TypeScript aber zu sehen auch in JS
+       * Beim Funktionsparameter soll Datentyp missachtet werden
+      */
+      results = elements.map(_ => _.length);
+      console.log("5. " + results);
+
+      /** Interpolation
+       * length wird schon vor dem => Pfeil abgefragt 
+       * und in eine Variable fooVar gespeichert.
+       * Diese Variable wird zurückgegeben
+       */
+      results = elements.map(({length: fooVar}) => fooVar);
+      console.log("6. " + results);
+
+
+      /* Verkürzte Schreibweise für die Interpolation */
+      results = elements.map(({length}) => length);
+      console.log("7. " + results);
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
